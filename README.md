@@ -14,16 +14,15 @@ configurable **audio-only recording** mode (source: private `Doxee-AI-CoE/Better
 
 ```bash
 brew tap doxee-ai-coe/tap
-brew install --cask --no-quarantine bettercapture-aicoe
-```
-
-`--no-quarantine` is needed because the app is **ad-hoc signed** (not notarized).
-Without it, macOS Gatekeeper may report the app as damaged or from an unidentified
-developer. Alternatively, after a normal install you can clear the flag:
-
-```bash
+brew install --cask bettercapture-aicoe
+# ad-hoc signed → clear Gatekeeper quarantine once:
 xattr -dr com.apple.quarantine "/Applications/BetterCapture.app"
 ```
+
+The app is **ad-hoc signed** (not notarized), so without clearing quarantine
+macOS Gatekeeper may report it as damaged or from an unidentified developer.
+(Older Homebrew supported `brew install --cask --no-quarantine`, but that flag
+was removed in recent Homebrew versions — use the `xattr` command above.)
 
 ### Update
 

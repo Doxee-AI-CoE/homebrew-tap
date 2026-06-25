@@ -7,20 +7,15 @@ cask "bettercapture-aicoe" do
   desc "macOS screen recorder with configurable audio-only recording (AI CoE fork)"
   homepage "https://github.com/Doxee-AI-CoE/BetterCapture"
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
   depends_on arch: :arm64
 
-  # Ad-hoc signed (not notarized). If Gatekeeper blocks launch, reinstall with
-  # `--no-quarantine`, or run: xattr -dr com.apple.quarantine "/Applications/BetterCapture.app"
   app "BetterCapture.app"
 
   caveats <<~EOS
-    BetterCapture is ad-hoc signed, not notarized. If macOS reports it is
-    damaged or from an unidentified developer, install with:
-
-      brew install --cask --no-quarantine doxee-ai-coe/tap/bettercapture-aicoe
-
-    or clear the quarantine attribute after install:
+    BetterCapture is ad-hoc signed, not notarized. After installing, if macOS
+    reports it is damaged or from an unidentified developer, clear the
+    quarantine attribute once:
 
       xattr -dr com.apple.quarantine "/Applications/BetterCapture.app"
   EOS
