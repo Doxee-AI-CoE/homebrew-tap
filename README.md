@@ -11,7 +11,7 @@ configurable **audio-only recording** mode (source: private `Doxee-AI-CoE/Better
 
 ```bash
 brew tap doxee-ai-coe/tap
-brew install --cask --no-quarantine bettercapture
+brew install --cask --no-quarantine bettercapture-aicoe-aicoe
 ```
 
 `--no-quarantine` is needed because the app is **ad-hoc signed** (not notarized).
@@ -25,11 +25,11 @@ xattr -dr com.apple.quarantine "/Applications/BetterCapture.app"
 ### Update
 
 ```bash
-brew update && brew upgrade --cask bettercapture
+brew update && brew upgrade --cask bettercapture-aicoe-aicoe
 ```
 
 ### Uninstall
 
 ```bash
-brew uninstall --cask bettercapture        # add --zap to also remove app data
+brew uninstall --cask bettercapture-aicoe        # add --zap to also remove app data
 ```
